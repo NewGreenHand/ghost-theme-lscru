@@ -1,0 +1,148 @@
+{{!< default}}
+{{#post}}
+	<header style="background-image: url({{#if feature_image}}{{feature_image}}{{else}}{{@site.cover_image}}{{/if}})"
+	        class="post-header">
+		<div class="post-header-container">
+			<div class="post-nav">
+				<a href="{{@site.url}}">HOME</a>
+			</div>
+			<div class="post-content">
+				<p class="post-tags">{{tags separator=""}}</p>
+			</div>
+		</div>
+	</header>
+	<div class="site-content">
+		<div class="article-wrapper">
+			<div class="article-left">
+				<div class="article-content">
+					<div class="post-title">{{title}}</div>
+					<div class="post-author">
+						<div class="author-avatar">
+							<img src="{{primary_author.profile_image}}" alt="头像">
+						</div>
+						<div class="author-content">
+							<div class="author-name">{{primary_author.name}}</div>
+							<div class="post-attr">
+								<time>{{date format="YYYY年MM月DD日"}}</time>
+								<span class="dotted">•</span>
+								<span>{{reading_time}}</span>
+							</div>
+						</div>
+					</div>
+					<article class="md-preview">
+						{{content}}
+					</article>
+				</div>
+			</div>
+			<nav class="navbar-side hidden">
+				<div class="toc-wrapper">
+					<a class="slide-toc-btn">
+						<span>目录</span>
+						<span></span>
+					</a>
+					<div id="toc"></div>
+				</div>
+			</nav>
+		</div>
+		<div class="post-footer">
+			{{!-- 作者信息 --}}
+			<div class="row">
+				<div class="col-md-9 col-md-offset-1">
+					<div class="post-author">
+						<figure class="author-image kg-image-card">
+							<a href="/author" style="background-image: url({{primary_author.profile_image}})"></a>
+						</figure>
+						<section class="author-info">
+							<a href="/">{{primary_author.name}}</a>
+							{{#if primary_author.bio}}
+								<p>{{primary_author.bio}}</p>
+							{{/if}}
+							<ul class="post-author-social">
+								{{>custom/social-icon}}
+							</ul>
+							<div class="author-meta">
+								<a href="{{@site.url}}" class="">
+									<span>
+										<i class="fa fa-link"></i>
+										{{@site.url}}
+									</span>
+								</a>
+								<span>
+								  <i class="fa fa-map-marker"></i>
+									ZhuHai CN
+								</span>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			{{!-- 上/下页 --}}
+			<div class="row">
+				<div class="col-md-9 col-md-offset-1">
+					<div class="prev-next-wrap">
+						<article class="prev-next-item">
+							<div class="prev-next-content">
+								{{#prev_post}}
+									<a href="{{url}}" class="link">上一篇</a>
+									<a href="{{url}}" class="title">{{title}}</a>
+									<p class="date">发表于 {{date created_at format="YYYY/MM/DD"}}</p>
+								{{/prev_post}}
+							</div>
+						</article>
+
+						<article class="prev-next-item">
+							<div class="prev-next-content">
+								{{#next_post}}
+									<a href="{{url}}" class="link">下一篇</a>
+									<a href="{{url}}" class="title">{{title}}</a>
+									<p class="date">发表于 {{date created_at format="YYYY/MM/DD"}}</p>
+								{{/next_post}}
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+
+			{{!-- 评论 --}}
+			<div class="row">
+				<div class="col-md-9 col-md-offset-1">
+					{{> custom/vcomments }}
+				</div>
+			</div>
+
+			{{!-- 文章推荐 --}}
+			<div class="row related-posts-wrapper">
+				<div class="col-md-9 col-md-offset-1">
+					<div class="related-post-title">
+						你可能喜欢......
+					</div>
+					<div class="related-post-list">
+						{{#if primary_tag}}
+						{{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+							{{#if related_posts}}
+							{{#foreach related_posts}}
+								<a href="{{url}}" style="background-image: url({{feature_image}})">
+									<p>{{title}}</p>
+								</a>
+							{{/foreach}}
+							{{/if}}
+						{{/get}}
+						{{/if}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{{!-- 回到顶部 --}}
+		<a id="back_to_top" href="#"></a>
+
+	</div>
+	{{!-- 公共底部 --}}
+	{{> copyright}}
+{{/post}}
+
+<div id="show_image_layer" class="hidden"></div>
+<div id="img_wrapper" class="hidden">
+	<img src="" alt="">
+</div>

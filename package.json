@@ -1,0 +1,85 @@
+{
+  "name": "ghost-theme-lscru",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
+  },
+  "description": "一个突出阅读属性的 ghost 主题",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:NewGreenHand/ghost-theme-lscru.git"
+  },
+  "keywords": [
+    "ghost",
+    "blog",
+    "ghost-theme"
+  ],
+  "scripts": {
+    "dev": "gulp",
+    "zip": "gulp zip",
+    "test": "gscan .",
+    "test:ci": "gscan --fatal --verbose .",
+    "pretest": "gulp build",
+    "preship": "yarn test",
+    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
+    "postship": "git fetch && gulp release"
+  },
+  "author": {
+    "name": "坑飞",
+    "email": "myisafei@gmail.com",
+    "url": "https://blog.fillpit.cn/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NewGreenHand/ghost-theme-lscru/issues"
+  },
+  "homepage": "https://github.com/NewGreenHand/ghost-theme-lscru",
+  "dependencies": {
+    "@tryghost/helpers": "^1.1.19"
+  },
+  "devDependencies": {
+    "@tryghost/release-utils": "0.5.0",
+    "autoprefixer": "9.7.6",
+    "beeper": "2.0.0",
+    "cssnano": "4.1.10",
+    "gscan": "3.4.1",
+    "gulp": "4.0.2",
+    "gulp-concat": "2.6.1",
+    "gulp-livereload": "4.0.2",
+    "gulp-postcss": "8.0.0",
+    "gulp-uglify": "3.0.2",
+    "gulp-zip": "5.0.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-less": "^4.0.0",
+    "gulp-rename": "^1.2.3",
+    "inquirer": "7.1.0",
+    "postcss-color-function": "4.1.0",
+    "postcss-custom-properties": "9.1.1",
+    "postcss-easy-import": "3.0.0",
+    "pump": "3.0.0"
+  },
+  "config": {
+    "posts_per_page": 6,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
+  }
+}

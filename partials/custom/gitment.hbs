@@ -1,0 +1,16 @@
+<div id="gitment" class="gitment"></div>
+<!-- 加载gitment -->
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '{{url}}',
+  owner: 'NewGreenHand',
+  repo: 'ghost_blog_gitment',
+  oauth: {
+    client_id: '4f18c7e56aa8ac05161d',
+    client_secret: 'e34f33c24d6c6149321c7846d0626e5b537669a9',
+  },
+})
+gitment.render('gitment')
+</script>
