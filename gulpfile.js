@@ -103,10 +103,7 @@ function mainJs(done) {
 function postJs(done) {
     pump([
         src([
-            'src/assets/js/highlight.pack.js', 
-            'src/assets/js/toc.js',
-            'src/assets/js/clipboard.min.js', 
-            'src/assets/js/post.js'
+            'src/assets/js/post/*.js'
         ], {sourcemaps: true}),
         concat('post.js'),
         uglify(),
