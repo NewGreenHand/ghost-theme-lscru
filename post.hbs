@@ -7,6 +7,16 @@
 				<a href="{{@site.url}}">HOME</a>
 			</div>
 			<div class="post-content">
+				{{!-- 文章标题部分 --}}
+				<div class="article-header">
+					<h1 class="post-title">{{title}}</h1>
+					<div class="post-attr">
+						<time>{{date format="YYYY年MM月DD日"}}</time>
+						<span class="dotted">•</span>
+						<span>{{reading_time}}</span>
+					</div>
+				</div>
+				{{!-- 文章标签 --}}
 				<p class="post-tags">{{tags separator=""}}</p>
 			</div>
 		</div>
@@ -14,25 +24,9 @@
 	<div class="site-content">
 		<div class="article-wrapper">
 			<div class="article-left">
-				<div class="article-content">
-					<div class="post-title">{{title}}</div>
-					<div class="post-author">
-						<div class="author-avatar">
-							<img src="{{primary_author.profile_image}}" alt="头像">
-						</div>
-						<div class="author-content">
-							<div class="author-name">{{primary_author.name}}</div>
-							<div class="post-attr">
-								<time>{{date format="YYYY年MM月DD日"}}</time>
-								<span class="dotted">•</span>
-								<span>{{reading_time}}</span>
-							</div>
-						</div>
-					</div>
-					<article class="md-preview">
-						{{content}}
-					</article>
-				</div>
+				<article class="md-preview">
+					{{content}}
+				</article>
 			</div>
 			<nav class="navbar-side hidden">
 				<div class="toc-wrapper">

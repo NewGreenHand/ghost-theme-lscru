@@ -8,7 +8,7 @@
   background: no-repeat center center;
   background-size: cover;
   position: relative;
-  height: 40vh;
+  height: 320px;
   &:before {
     .cover-mixin;
     background: linear-gradient(to bottom, rgba(56, 56, 56, .75), rgba(56, 56, 56, .35) 100%);
@@ -43,14 +43,46 @@
     }
   }
   .post-content {
-    text-align: center;
-    margin-top: 65px;
+    text-align: left;
+    margin-top: 45px;
     font-family: 'Microsoft YaHei', 'Open Sans', sans-serif;
+    .article-header {
+      transition: all 0s;
+      padding: 15px 24px 50px 0;
+      margin: 0 auto;
+      max-width: 996px;
+      color: #fff0;
+      background-image: linear-gradient(to right, #f9f9f9, #c4d0d2);
+      background-clip: text;
+      .post-title {
+        font-weight: 700;
+        font-size: 55px;
+        word-wrap: break-word;
+      }
+      .post-attr {
+        font-weight: 300;
+        font-size: 20px;
+        .dotted {
+          margin: 0 4px;
+        }
+      }
+    }
     .post-tags {
       position: absolute;
       left: 0;
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 999em;
+      padding: 0 10px;
+      color: @font-white-color;
+      line-height: 24px;
+      font-size: 12px;
+      text-decoration: none;
+      margin: 0 1px;
+      margin-bottom: 6px;
       a {
-        margin-right: 10px;
+        margin-right: 5px;
+        color: @font-white-color;
       }
       ul {
         list-style: none;
@@ -79,44 +111,10 @@
   .article-left {
     position: relative;
     transition: all 0s;
-    .article-content {
-      transition: all 0s;
-      padding: 15px 24px;
-      width: 65%;
-      margin: 0 auto;
-      max-width: 996px;
-      .post-title {
-        font-weight: 700;
-        font-size: 30px;
-        line-height: 1.2;
-        margin-bottom: 10px;
-        word-wrap: break-word;
-      }
-      .post-author {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-        .author-avatar {
-          margin-right: 10px;
-          img {
-            width: 50px;
-          }
-        }
-        .post-attr {
-          color: #909090;
-          font-size: 14px;
-          .dotted {
-            margin: 0 4px;
-          }
-        }
-        .author-info {
-          margin: 48px 0 0;
-          text-align: center;
-          width: 55%;
-          max-width: 900px;
-        }
-      }
-    }
+    padding: 15px 24px;
+    width: 65%;
+    margin: 0 auto;
+    max-width: 996px;
     .md-preview {
       font-family: -apple-system,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
       font-size: 16px;
@@ -253,50 +251,6 @@
   }
 }
 
-
-/* 猜你喜欢 */
-.related-posts-wrapper {
-  background: #f6f6f6;
-  position: relative;
-  margin: 20px auto 0;
-  padding: 25px 0 35px;
-  .related-post-title {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: #333;
-    padding-left: 10px;
-    border-left: 3px solid #179bb2;
-  }
-  .related-post-list {
-    display: flex;
-    flex-direction: row;
-    a {
-      background: #f4f6f8 no-repeat center center;
-      background-size: cover;
-      position: relative;
-      transition: all .15s ease-in-out;
-      display: block;
-      flex: 1 0 auto;
-      min-height: 240px;
-      max-width: 900px;
-      &:not(:last-child) {
-        margin-right: 15px;
-      } 
-      p {
-        position: absolute;
-        bottom: 0;
-        font-size: 16px;
-        margin: 0;
-        padding: 10px 15px;
-        background: rgba(0,0,0,.5);
-        word-break: break-all;
-        color: #fff;
-        width: 100%;
-      }
-    }
-  }
-}
 
 @media (max-width: 1024px) {
   .navbar-side {
