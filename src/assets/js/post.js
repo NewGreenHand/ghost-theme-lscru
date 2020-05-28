@@ -34,13 +34,13 @@ $(function () {
 
     //回到顶部
     $(window).scroll(function () {
-        if ($(window).scrollTop() >= 300) {
-            $('#back_to_top').fadeIn(300);
+        if ($(window).scrollTop() >= 400) {
+            $('#cd_top').fadeIn(400);
         } else {
-            $('#back_to_top').fadeOut(300);
+            $('#cd_top').fadeOut(400);
         }
     });
-    $('#back_to_top').click(function () {
+    $('#cd_top').click(function () {
         $('html,body').animate({scrollTop: '0px'}, 600);
         return false;
     });

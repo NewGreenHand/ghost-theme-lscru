@@ -133,9 +133,9 @@ function zipper(done) {
     ], handleError(done));
 }
 
-const lessWatcher = () => watch('src/assets/less/**/*.less', [Less, css]);
-const jsWatcher = () => watch('src/assets/js/**/*.js', [mainJs, postJs]);
-const cssWatcher = () => watch('src/assets/css/*.css', [css]);
+const lessWatcher = () => watch('src/assets/less/**/*.less', parallel(Less, css));
+const jsWatcher = () => watch('src/assets/js/**/*.js', parallel(mainJs, postJs));
+const cssWatcher = () => watch('src/assets/css/*.css', css);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const watcher = parallel(lessWatcher, jsWatcher, cssWatcher, hbsWatcher);
 const build = series(Less, css, mainJs, postJs);
