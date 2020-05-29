@@ -1,18 +1,10 @@
 .prev-next-wrap {
     margin: 30px auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     max-width: 1000px;
     .prev-next-item {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-flex: 1;
-        -ms-flex: 1 0;
         flex: 1 0;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
         justify-content: center;
         .prev-next-content {
           margin-left: 20px;
@@ -35,4 +27,10 @@
           }
         }
     }
+}
+
+@media (max-width: 450px) {
+  .prev-next-wrap {
+      display: none;
+  }
 }

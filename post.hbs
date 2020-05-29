@@ -72,30 +72,26 @@
 			</div>
 
 			{{!-- 上/下页 --}}
-			<div class="row">
-				<div class="col-md-9 col-md-offset-1">
-					<div class="prev-next-wrap">
-						<article class="prev-next-item">
-							<div class="prev-next-content">
-								{{#prev_post}}
-									<a href="{{url}}" class="link">上一篇</a>
-									<a href="{{url}}" class="title">{{title}}</a>
-									<p class="date">发表于 {{date created_at format="YYYY/MM/DD"}}</p>
-								{{/prev_post}}
-							</div>
-						</article>
-
-						<article class="prev-next-item">
-							<div class="prev-next-content">
-								{{#next_post}}
-									<a href="{{url}}" class="link">下一篇</a>
-									<a href="{{url}}" class="title">{{title}}</a>
-									<p class="date">发表于 {{date created_at format="YYYY/MM/DD"}}</p>
-								{{/next_post}}
-							</div>
-						</article>
+			<div class="prev-next-wrap">
+				<article class="prev-next-item">
+					<div class="prev-next-content">
+						{{#prev_post}}
+							<a href="{{url}}" class="link">上一篇</a>
+							<a href="{{url}}" class="title">{{title}}</a>
+							<p class="date">发表于 {{date created_at format="YYYY/MM/DD"}}</p>
+						{{/prev_post}}
 					</div>
-				</div>
+				</article>
+
+				<article class="prev-next-item">
+					<div class="prev-next-content">
+						{{#next_post}}
+							<a href="{{url}}" class="link">下一篇</a>
+							<a href="{{url}}" class="title">{{title}}</a>
+							<p class="date">发表于 {{date created_at format="YYYY/MM/DD"}}</p>
+						{{/next_post}}
+					</div>
+				</article>
 			</div>
 
 			{{!-- 评论 --}}
