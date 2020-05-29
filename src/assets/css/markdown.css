@@ -3,7 +3,7 @@
     font-size: 16px;
     line-height: 1.7;
     color: #333;
-    margin: 1rem;
+    margin: 5vw;
 }
 
 .md-preview h1, .md-preview h2, .md-preview h3, .md-preview h4, .md-preview h5, .md-preview blockquote,
@@ -260,7 +260,7 @@ sup {
     display: flex;
     flex-direction: column;
     max-width: 1040px;
-    width: 100vw;
+    width: 100%;
 }
 
 .kg-gallery-row {

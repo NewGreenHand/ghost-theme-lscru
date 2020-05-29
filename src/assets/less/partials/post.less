@@ -107,27 +107,15 @@
 
 /* 主体容器 */
 .article-wrapper {
-  position: relative;
+  display: flex;
   margin: 0 auto;
   transition: all 0s;
   /* 文章 */
   .article-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     transition: all 0s;
     margin: 0 auto;
+    width: 100%;
     max-width: @adapter-tablet-max-width;
-  }
-  /* toc 侧边栏 */
-  .navbar-side {
-    position: absolute;
-    top: 0;
-    right: -268px;
-    width: 260px;
-    border-left: 1px solid @border-color;
-    height: 100%;
-    transition: all .2s;
   }
 }
 
@@ -153,28 +141,10 @@
 .post-footer {
   position: relative;
   margin-top: 80px;
-  // &:before {
-  //   position: absolute;
-  //   content: "";
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: rgba(255, 255, 255, .75);
-  // }
   .post-author {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     position: relative;
     border-top: 1px dashed #e6e6e6;
@@ -248,30 +218,12 @@
   }
 }
 
-
-@media (max-width: @adapter-tablet-max-width) {
-   /* 主体容器 */
-  .article-wrapper {
-    /* 文章 */
-    .article-left {
-      width: 90%;
-    }
-  }
-  /* 侧边栏 */
-  .navbar-side {
-    display: none;
-  }
+/* 评论 */
+.vcomments {
+  margin: 1vw;
 }
 
 @media (max-width: @adapter-mobile-max-width) {
-    /* 主体容器 */
-  .article-wrapper {
-    /* 文章 */
-    .article-left {
-      width: 100%;
-      padding: 2rem 1rem;
-    }
-  }
   .post-header {
     .post-header-container {
       width: 95%;
@@ -291,9 +243,5 @@
         bottom: 2px;
       }
     }
-  }
-    /* 评论 */
-  .vcomments {
-    margin: 1rem;
   }
 }

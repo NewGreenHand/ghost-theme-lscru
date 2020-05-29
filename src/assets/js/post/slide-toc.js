@@ -3,17 +3,19 @@ $(function() {
     var has_toc = $('.md-preview h1,.md-preview h2,.md-preview h3').length > 0;
     if (has_toc) {
         $('.navbar-side').removeClass('hidden');
+        // 初始化 侧边栏
+        initSlide();
     }
 
     // 显示或关闭侧边栏
-    $('.slide-toc-btn').click(function (e) {
-        if ($(e.currentTarget).hasClass('show-toc')) {
-            hideSlide(e);
-        } else {
-            showSlide(e);
-        }
-        $(e.currentTarget).toggleClass('show-toc');
-    });
+    // $('.slide-toc-btn').click(function (e) {
+    //     if ($(e.currentTarget).hasClass('show-toc')) {
+    //         hideSlide(e);
+    //     } else {
+    //         initSlide(e);
+    //     }
+    //     $(e.currentTarget).toggleClass('show-toc');
+    // });
 
     //toc滚动设置
     $(window).scroll(function () {
@@ -22,7 +24,7 @@ $(function() {
 })
 
 // 显示侧边栏
-function showSlide() {
+function initSlide() {
     $('.navbar-side').css('right', 0);
     $('.article-left').addClass('has-side');
     //初始化toc
