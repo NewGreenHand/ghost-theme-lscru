@@ -110,23 +110,14 @@
   position: relative;
   margin: 0 auto;
   transition: all 0s;
-  .has-side {
-    margin-right: 200px;
-  }
   /* 文章 */
   .article-left {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: all 0s;
-    padding: 15px 24px;
-    width: 65%;
     margin: 0 auto;
-    max-width: 996px;
-    .md-preview {
-      font-family: -apple-system,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #333;
-    }
+    max-width: @adapter-tablet-max-width;
   }
   /* toc 侧边栏 */
   .navbar-side {
@@ -258,7 +249,7 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: @adapter-tablet-max-width) {
    /* 主体容器 */
   .article-wrapper {
     /* 文章 */
@@ -272,7 +263,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: @adapter-mobile-max-width) {
     /* 主体容器 */
   .article-wrapper {
     /* 文章 */
@@ -300,5 +291,9 @@
         bottom: 2px;
       }
     }
+  }
+    /* 评论 */
+  .vcomments {
+    margin: 1rem;
   }
 }
