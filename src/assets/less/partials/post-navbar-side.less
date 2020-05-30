@@ -1,63 +1,93 @@
-  /* toc 侧边栏 */
-  .navbar-side {
-    width: 260px;
+
+/* toc 侧边栏 */
+.navbar-side {
+  padding-top: 5vh;
+  width: 240px;
+  height: 100%;
+  transition: all .2s;
+  .catalog {
+      color: gray;
+      padding-bottom: 1em;
+      a {
+          color: gray!important;
+          text-decoration: none;
+      }
   }
+  .catalog-toggle::before {
+    content: "−";
+    position: relative;
+    margin-right: 5px;
+    bottom: 1px
+  }
+}
 
   /*-------------------------文章toc目录---------------------------*/
 .toc-wrapper {
+  &.position-absolute {
     position: absolute;
-    border-left: 1px solid @border-color;
-    transition: all .2s;
-
-    &.position-absolute {
-        position: absolute;
-    }
-    &.position-fixed {
-        position: fixed;
-        top: 0;
-    }
+  }
+  &.position-fixed {
+    position: fixed;
+    top: 0;
+  }
 }
 #toc {
   color: @font-black-color;
-  padding-top: 30px;
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    li {
-      padding: 5px 0;
-    }
-  }
+  font-size: 14px;
+  padding-left: 5px;
   a {
-    color: @font-black-color;
-    text-decoration: none;
-    display: block;
-    transition: none;
-    border-left: 3px solid transparent;
-    padding-left: 10px;
+    color: #bfbfbf!important
   }
-  .toc-h2 {
-    padding-left: 12px;
-  }
-  .toc-h3 {
-    padding-left: 24px;
-  }
-  .toc-active {
-    border-left: 4px solid @link-color;
-    color: @link-color;
-    background-color: @toc-bg-color;
-    margin-left: -2px;
-    a {
-      color: @link-color;
-      margin-left: -2px;
-    }
-  }
-}
 
-@media (max-width: 1500px) {
-    .navbar-side {
-        display: none;
+  a:hover, a:active {
+    color: #0085a1!important
+  }
+
+  ul {
+    position: relative;
+    list-style: none;
+    height: auto;
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 5px;
+    text-indent: 0;
+    li {
+      position: relative;
+      list-style: none;
+      a {
+        padding-left: 10px;
+        max-width: 230px;
+        display: inline-block;
+        vertical-align: middle;
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+        text-decoration: none;
+        white-space: nowrap;
+        text-overflow: ellipsis
+      }
     }
+
+    .toc-h2 {
+      margin-left: 0;
+      font-size: 13px;
+      font-weight: 700
+    }
+    .toc-h3 {
+      margin-left: 13px;
+      font-size: 12px;
+      a {
+        max-width: 220px
+      }
+    }
+    .toc-active {
+      border-radius: 4px;
+      background-color: #F5F5F5;
+      a {
+        color: #0085a1!important
+      }
+    }
+  }
 }
 
 @media (max-width: @adapter-mobile-max-width) {
