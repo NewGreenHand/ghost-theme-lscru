@@ -17,7 +17,7 @@
     position: relative;
     width: 80%;
     height: 100%;
-    color: @font-white-color;
+    color: #dadada;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,11 +29,11 @@
     top: 45px;
     left: 0;
     a {
-      color: @font-white-color;
+      color: #dadada;
       font-size: 12px;
       padding: 8px 32px;
       opacity: 0.8;
-      border: 1px solid #fff;
+      border: 1px solid #dedede;
       border-radius: 0;
       background: none;
       &:hover {
@@ -45,14 +45,13 @@
   .post-content {
     text-align: left;
     margin-top: 45px;
-    font-family: 'Microsoft YaHei', 'Open Sans', sans-serif;
     .article-header {
       transition: all 0s;
       padding: 15px 24px;
       margin: 0 auto;
       max-width: 996px;
       color: #fff0;
-      background-image: linear-gradient(to right, #f9f9f9, #c4d0d2);
+      background-image: linear-gradient(to right, #e6e6e6,#c1dfe5);
       background-clip: text;
       .post-title {
         font-weight: 500;
@@ -75,7 +74,7 @@
       border: 1px solid rgba(255,255,255,.8);
       border-radius: 999em;
       padding: 0 10px;
-      color: @font-white-color;
+      color: #dadada;
       line-height: 24px;
       font-size: 12px;
       text-decoration: none;
@@ -88,7 +87,7 @@
       }
       a {
         margin-right: 5px;
-        color: @font-white-color;
+        color: #dadada;
       }
       ul {
         list-style: none;
@@ -147,7 +146,7 @@
     align-items: flex-start;
     justify-content: center;
     position: relative;
-    border-top: 1px dashed #e6e6e6;
+    border-top: 1px dashed var(--border-divider-color);
     .author-image {
       box-sizing: border-box;
       display: block;
@@ -160,9 +159,9 @@
       border-radius: 100%;
       overflow: hidden;
       padding: 6px;
-      background: #fff;
+      background: var(--background-model-color);
       z-index: 2;
-      box-shadow: #e7eef2 0 0 0 1px;
+      box-shadow: var(--border-divider-color) 0 0 0 1px;
       a {
         position: relative;
         display: block;
@@ -179,29 +178,30 @@
       width: 55%;
       max-width: 900px;
       h4 {
-        color: @font-grey-color;
+        color: var(--font-post-subtitle-color);
         a {
-          color: @font-grey-color;
+          color: var(--font-post-subtitle-color);
           text-decoration: none;
           &:hover {
-            color: #333;
+            color: var(--font-post-title-color);
           }
         }
       }
       p {
         margin: 20px 0;
         line-height: 1.9;
+        color: var(--font-post-subtitle-color);
       }
       .author-meta {
         margin: 20px 0 15px;
         font-size: 14px;
         line-height: 1;
         font-style: italic;
-        color: @font-grey-color;
+        color: var(--font-post-subtitle-color);
         a {
-          color: @font-grey-color;
+          color: var(--font-post-subtitle-color);
           &:hover {
-            color: #333;
+            color: var(--font-post-title-color);
           }
         }
         span {

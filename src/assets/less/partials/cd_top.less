@@ -39,19 +39,16 @@
 
 .cd-top {
   display: none;
-  height: 55px;
-  width: 55px;
   position: fixed;
   bottom: 40px;
   right: 20px;
-  /* image replacement properties */
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  background: url(../images/gotop.png) no-repeat center 50%;
-  visibility: hidden;
   opacity: 0;
   transition: opacity .3s 0s, visibility 0s .3s;
+  svg {
+    width: 64px;
+    height: 64px;
+    fill: var(--font-post-content-color);
+  }
 }
 .cd-top:hover {
   animation: btn-pudding 1s linear;
@@ -76,9 +73,45 @@
 }
 @media only screen and (min-width: 1024px) {
   .cd-top {
-    height: 55px;
-    width: 55px;
     right: 50px;
     bottom: 50px;
   }
 }
+
+// @media (prefers-color-scheme: dark) {
+//   .cd-top {
+//     display: none;
+//     height: 55px;
+//     width: 55px;
+//     position: fixed;
+//     bottom: 40px;
+//     right: 20px;
+//     /* image replacement properties */
+//     overflow: hidden;
+//     text-indent: 100%;
+//     white-space: nowrap;
+//     background: url(../images/gotop-light.png) no-repeat center 50% !important;
+//     visibility: hidden;
+//     opacity: 0;
+//     transition: opacity .3s 0s, visibility 0s .3s;
+//   }
+// }
+
+// @media (prefers-color-scheme: light) {
+//   .cd-top {
+//     display: none;
+//     height: 55px;
+//     width: 55px;
+//     position: fixed;
+//     bottom: 40px;
+//     right: 20px;
+//     /* image replacement properties */
+//     overflow: hidden;
+//     text-indent: 100%;
+//     white-space: nowrap;
+//     background: url(../images/gotop-dark.png) no-repeat center 50% !important;
+//     visibility: hidden;
+//     opacity: 0;
+//     transition: opacity .3s 0s, visibility 0s .3s;
+//   }
+// }

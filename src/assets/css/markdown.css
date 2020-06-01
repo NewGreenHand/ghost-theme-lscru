@@ -2,7 +2,7 @@
     font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
     font-size: 16px;
     line-height: 1.7;
-    color: #333;
+    color: var(--font-post-content-color);
     margin: 20px 5vw;
 }
 
@@ -19,10 +19,10 @@
 }
 
 .md-preview blockquote {
-    border-left: 4px solid #179bb2;
+    border-left: 4px solid var(--font-link-color);
     padding: 10px 15px;
-    color: #818181;
-    background-color: whitesmoke;
+    color: var(--font-post-content-color);
+    background-color: var(--post-code-box-background-color);
     font-size: 16px;
     font-style: italic;
 }
@@ -36,12 +36,7 @@
 }
 
 .md-preview a {
-    color: #4183C4;
-}
-
-.md-preview a:hover {
-    color: #075b8d;
-    text-decoration: underline;
+    color: var(var(---font-link-color));
 }
 
 .md-preview h1 {
@@ -54,11 +49,13 @@
     font-size: 28px;
     font-weight: 600;
     margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-divider-color);
+    color: var(--font-post-title-color);
 }
 
 .md-preview h3 {
     font-size: 24px;
+    color: var(--font-post-subtitle-color);
 }
 
 .md-preview h4 {
@@ -75,7 +72,7 @@
 
 .md-preview hr {
     border: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-divider-color);
 
 }
 
@@ -100,36 +97,44 @@
     white-space: nowrap;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, 'Microsoft YaHei';
     color: #c7254e;
-    background-color: #f9f2f4;
+    background-color: var(--active-background-color);
     border-radius: 4px;
     margin: 0 4px;
 }
 
 table {
+    width: 100%;
     padding: 0;
     border-collapse: collapse;
 }
 
-table tr {
-    border-top: 1px solid #cccccc;
-    background-color: white;
+table thead tr {
+    border-top: 1px solid var(--border-divider-color);
+    background-color: var(--table-header-background-color);
+    margin: 0;
+    padding: 0;
+}
+
+table tbody tr {
+    border-top: 1px solid var(--border-divider-color);
+    background-color: var(--table-single-background-color);
     margin: 0;
     padding: 0;
 }
 
 table tr:nth-child(2n) {
-    background-color: #f8f8f8;
+    background-color: var(--table-double-background-color);
 }
 
 table tr th {
     font-weight: bold;
-    border: 1px solid #cccccc;
+    border: 1px solid var(--border-divider-color);
     margin: 0;
     padding: 6px 13px;
 }
 
 table tr td {
-    border: 1px solid #cccccc;
+    border: 1px solid var(--border-divider-color);
     margin: 0;
     padding: 6px 13px;
 }
@@ -143,23 +148,14 @@ table tr th :last-child, table tr td :last-child {
 }
 
 .md-preview pre {
-    background: url(../../../assets/images/blueprint.png) #f7f7f9;
+    background: url(../../../assets/images/blueprint.png) var(--post-code-box-background-color);
     background-size: 36px, 24px;
-    border-radius: 0;
     border: none;
-    font-size: 13px;
-    line-height: 1.7;
     overflow: auto;
-    padding: 6px 12px;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
 }
 
 .md-preview pre code {
-    color: #333;
+    color: var(--font-post-content-color);
     white-space: pre;
     border: none;
     background: transparent;
@@ -167,16 +163,6 @@ table tr th :last-child, table tr td :last-child {
 
 .md-preview pre code span {
     background: transparent;
-}
-
-.highlight pre {
-    background-color: #f8f8f8;
-    border: 1px solid #cccccc;
-    font-size: 14px;
-    line-height: 19px;
-    overflow: auto;
-    padding: 6px 10px;
-    border-radius: 3px;
 }
 
 pre code, pre tt {

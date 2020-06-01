@@ -7,16 +7,6 @@ $(function() {
         initSlide();
     }
 
-    // 显示或关闭侧边栏
-    // $('.slide-toc-btn').click(function (e) {
-    //     if ($(e.currentTarget).hasClass('show-toc')) {
-    //         hideSlide(e);
-    //     } else {
-    //         initSlide(e);
-    //     }
-    //     $(e.currentTarget).toggleClass('show-toc');
-    // });
-
     //toc滚动设置
     $(window).scroll(function () {
         setTocPosition();

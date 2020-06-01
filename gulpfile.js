@@ -88,7 +88,6 @@ function mainJs(done) {
         src([
             // pull in lib files first so our own code can depend on it
             'src/assets/js/jquery.min.js', 
-            'src/assets/js/bootstrap.min.js', 
             'src/assets/js/pace.min.js',
             'src/assets/js/main.js'
         ], {sourcemaps: true}),

@@ -1,27 +1,67 @@
 
-@background-color: #fff;
-@toc-bg-color: #e6e6e6;
+/*深色*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 文字颜色 */
+    --font-post-title-color: #a8a8a8;
+    --font-post-subtitle-color: #959595;
+    --font-post-content-color: #838383;
+    --font-link-color: #179bb2;
+    --font-link-active-color: #179bb2;
 
-@nav-bg-color: rgba(14, 21, 27, 0.6);
-@nav-border-color: rgba(0, 0, 0, 0.3);
+    /* 边框 */
+    --border-color: #525252;
+    --border-shadow-color: #5b5b5b;
+    --border-divider-color: #4b4b4b;
 
-@text-shadow-color: #595959;
-@text-shadow-hover-color: #000;
+    /* 背景 */
+    --background-color: #242424;
+    --active-background-color: #070505;
+    --background-model-color: #454545;
+    --table-header-background-color: #454545;
+    --table-single-background-color: #383838;
+    --table-double-background-color: #2c2c2c;
 
+    /* 文章里的代码容器背景 */
+    --post-code-box-background-color: #2f2f2f;
 
-@copyright-top-bg-color: #e1f2fb;
-@copyright-bottom-bg-color: #f1f9f9;
-@footer-bg-color: #0e151b;
+    /* 版权背景 */
+    --copyright-edge-background-color: #454545;
+    --copyright-center-background-color: #333333;
+  }
+}
 
-/* 文字颜色 */
-@font-white-color: #fff;
-@font-grey-color: #909090;
-@header-font-hover-color: #efefef;
-@link-color: #179bb2;
-@font-black-color: #333;
+/*浅色*/
+@media (prefers-color-scheme: light) {
+  :root {
+    /* 文字颜色 */
+    --font-post-title-color: #242424;
+    --font-post-subtitle-color: #6e6e6e;
+    --font-post-content-color: #999;
+    --font-link-color: #179bb2;
+    --font-link-active-color: #179bb2;
 
-/* border颜色 */
-@border-color: #dedede;
+    /* 边框 */
+    --border-color: #4b4b4b;
+    --border-shadow-color: #E9E9E9;
+    --border-divider-color: #d5d5d5;
+
+    /* 背景 */
+    --background-color: #fff;
+    --active-background-color: #F5F5F5;
+    --background-model-color: #f8f8f8;
+    --table-header-background-color: #f6f6f6;
+    --table-single-background-color: #ececec;
+    --table-double-background-color: #e5e5e5;
+
+    /* 文章里的代码容器背景 */
+    --post-code-box-background-color: #e5e5e5;
+    
+    /* 版权背景 */
+    --copyright-edge-background-color: #e1f2fb;
+    --copyright-center-background-color: #f1f9f9;
+  }
+}
 
 /* 分辨率适配 */
 @adapter-mobile-max-width: 500px;

@@ -1,7 +1,4 @@
 $(function() {
-    //代码高亮
-    hljs.initHighlightingOnLoad();
-
     //复制代码
     $('.md-preview pre').hover(function () {
         var div_copy_code = "<a data-toggle='tooltip' data-placement='right' title='点击复制代码' class='copy-code-wrapper' onclick='copyCode(this);'>复制</a>";
