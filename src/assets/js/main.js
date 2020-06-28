@@ -11,15 +11,6 @@ $(function () {
         $('html,body').animate({scrollTop: scrollTop}, 0);
         $('.site-header').removeClass('invisible');
     }
-
-    //标签云
-    // $.get(
-    //     ghost.url.api('tags', {
-    //         limit: 24,
-    //         include: 'count.posts',
-    //         order: 'count.posts DESC'
-    //     })
-    // ).done(onSuccess);
 });
 
 function onSuccess(data) {
